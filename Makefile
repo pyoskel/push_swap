@@ -6,7 +6,7 @@
 #    By: pabartoc <pabartoc@student.42heilbronn.    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/01/24 19:15:28 by pabartoc          #+#    #+#              #
-#    Updated: 2026/03/08 18:22:09 by pabartoc         ###   ########.fr        #
+#    Updated: 2026/05/29 23:53:55 by pabartoc         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,34 +17,43 @@ NAME = push_swap
 HEADER = push_swap.h
 
 CC = cc
-CFLAGS = -Wall -Wextra -Werror -g
+CFLAGS = -Wall -Wextra -Werror -I inc -I libft
 
-SOURCE =	push_swap.c \
-			.c \
+# Ordner-Struktur
+SRC_DIR     = src
+INC_DIR     = inc
+LIBFT_DIR   = libft
 
-OBJECTS = $(SOURCE:.c=.o)
+# Die Library
+LIBFT       = $(LIBFT_DIR)/libft.a
+
+# Quelldateien und Objektdateien
+SRCS        = $(SRC_DIR)/push_swap.c
+OBJS        = $(SRCS:.c=.o)
 
 # Default rule
 all: $(NAME)
 
-# Create the static library
-$(NAME): $(OBJECTS)
-	ar rcs $(NAME) $(OBJECTS)
-	echo "\033[1;32m ✅ [push_swap created]\033[0m"
-	
-# Rule for compiling .c \ files into .o files
-%.o: %.c
-	$(CC) $(CFLAGS) -c $< -o $@
+# Baut das eigentliche push_swap Programm
+$(NAME): $(LIBFT) $(OBJS)
+	$(CC) $(CFLAGS) $(OBJS) $(LIBFT) -o $(NAME)
 
-# Clean object files
+# Baut die libft, indem es in den libft-Ordner geht und dort 'make' ausführt
+$(LIBFT):
+	@make -C $(LIBFT_DIR)
+
+# Löscht die generierten .o Dateien (auch in der libft)
 clean:
-	@rm -f $(OBJECTS)
+	@make -C $(LIBFT_DIR) clean
+	rm -f $(OBJS)
 
-# Clean everything (object files and library)
+# Löscht die .o Dateien UND die fertigen Programme/Libraries
 fclean: clean
-	@rm -f $(NAME)
+	@make -C $(LIBFT_DIR) fclean
+	rm -f $(NAME)
 
 # Rebuild everything
 re: fclean all
 
+# Phony verhindert Konflikte, falls es Dateien gibt, die so heißen wie unsere Regeln
 .PHONY: all clean fclean re
