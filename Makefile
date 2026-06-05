@@ -6,7 +6,7 @@
 #    By: pabartoc <pabartoc@student.42heilbronn.    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/01/24 19:15:28 by pabartoc          #+#    #+#              #
-#    Updated: 2026/05/29 23:53:55 by pabartoc         ###   ########.fr        #
+#    Updated: 2026/05/30 00:25:01 by pabartoc         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,7 +17,7 @@ NAME = push_swap
 HEADER = push_swap.h
 
 CC = cc
-CFLAGS = -Wall -Wextra -Werror -I inc -I libft
+CFLAGS = -Wall -Wextra -Werror -I inc -I libft/inc
 
 # Ordner-Struktur
 SRC_DIR     = src
