@@ -6,7 +6,7 @@
 /*   By: pabartoc <pabartoc@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/24 19:15:31 by pabartoc          #+#    #+#             */
-/*   Updated: 2026/06/05 03:02:48 by pabartoc         ###   ########.fr       */
+/*   Updated: 2026/06/05 03:20:31 by pabartoc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,12 @@ int	main(int argc, char **argv)
 		{
 			ft_putstr_fd("Error\n", 2);
 			return (EXIT_FAILURE);
+		}
+		else
+		{
+			// Wenn die Argumente einzeln übergeben wurden (z.B. ./push_swap 3 2 5)
+			// Wir überspringen argv[0] ("./push_swap") und zeigen direkt auf die Zahlen
+			args = argv + 1;
 		}
 			// === TEMP TEST-CODE ===
 		printf("--- TEST START ---\n");
