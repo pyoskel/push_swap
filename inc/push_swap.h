@@ -6,7 +6,7 @@
 /*   By: pabartoc <pabartoc@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/24 19:15:33 by pabartoc          #+#    #+#             */
-/*   Updated: 2026/03/07 22:01:28 by pabartoc         ###   ########.fr       */
+/*   Updated: 2026/06/07 06:55:29 by pabartoc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,5 +26,8 @@ typedef struct s_node
 	int				index; // Der Rang für deinen Algorithmus (z.B. 0, 1, 2...)
 	struct s_node	*next; // Der "Schnitzeljagd"-Zeiger auf das nächste Element
 }					t_node;
+
+/* --- Funktions-Prototypen --- */
+int	is_input_valid(char **args);
 
 #endif

@@ -6,15 +6,13 @@
 #    By: pabartoc <pabartoc@student.42heilbronn.    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/01/24 19:15:28 by pabartoc          #+#    #+#              #
-#    Updated: 2026/05/30 00:25:01 by pabartoc         ###   ########.fr        #
+#    Updated: 2026/06/07 07:09:45 by pabartoc         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 .SILENT :
 
 NAME = push_swap
-
-HEADER = push_swap.h
 
 CC = cc
 CFLAGS = -Wall -Wextra -Werror -I inc -I libft/inc
@@ -28,7 +26,8 @@ LIBFT_DIR   = libft
 LIBFT       = $(LIBFT_DIR)/libft.a
 
 # Quelldateien und Objektdateien
-SRCS        = $(SRC_DIR)/push_swap.c
+SRCS        = $(SRC_DIR)/push_swap.c \
+			  $(SRC_DIR)/validation.c
 OBJS        = $(SRCS:.c=.o)
 
 # Default rule

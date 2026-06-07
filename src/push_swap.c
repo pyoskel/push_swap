@@ -6,7 +6,7 @@
 /*   By: pabartoc <pabartoc@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/24 19:15:31 by pabartoc          #+#    #+#             */
-/*   Updated: 2026/06/07 01:35:23 by pabartoc         ###   ########.fr       */
+/*   Updated: 2026/06/07 07:26:40 by pabartoc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,13 +30,16 @@ int	main(int argc, char **argv)
 		}
 	}
 	else
-	{
 		args = argv + 1;
+	if (!is_input_valid(args))
+	{
+		ft_putstr_fd("Error\n", 2);
+		return (EXIT_FAILURE);
 	}
 	return (0);
 }
 
-// === CODE ===
+// === TEST-CODE-1 ===
 // int	main(int argc, char **argv)
 // {
 // 	char	**args;
@@ -75,3 +78,15 @@ int	main(int argc, char **argv)
 // 	// ./push_swap 42 1337 -5 0
 // 	// ============================
 // 	return (0);
+
+// =============================================================================
+
+// === TEST-CODE-2 ===
+	// printf("Die Eingabe ist fehlerfrei!\n");
+// ============================
+// Test for validation.c
+
+// make
+// ./push_swap 1 2 2 (Duplikat)
+// ./push_swap 1 2 3000000000 (Überlauf)
+// ./push_swap 1 2 abc (no digit)
