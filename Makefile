@@ -6,7 +6,7 @@
 #    By: pabartoc <pabartoc@student.42heilbronn.    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/01/24 19:15:28 by pabartoc          #+#    #+#              #
-#    Updated: 2026/06/07 07:09:45 by pabartoc         ###   ########.fr        #
+#    Updated: 2026/06/09 00:50:42 by pabartoc         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -27,7 +27,8 @@ LIBFT       = $(LIBFT_DIR)/libft.a
 
 # Quelldateien und Objektdateien
 SRCS        = $(SRC_DIR)/push_swap.c \
-			  $(SRC_DIR)/validation.c
+			  $(SRC_DIR)/validation.c \
+			  $(SRC_DIR)/utils.c \
 OBJS        = $(SRCS:.c=.o)
 
 # Default rule

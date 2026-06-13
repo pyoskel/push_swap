@@ -6,7 +6,7 @@
 /*   By: pabartoc <pabartoc@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/24 19:15:33 by pabartoc          #+#    #+#             */
-/*   Updated: 2026/06/07 06:55:29 by pabartoc         ###   ########.fr       */
+/*   Updated: 2026/06/09 00:52:26 by pabartoc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,9 @@ typedef struct s_node
 }					t_node;
 
 /* --- Funktions-Prototypen --- */
-int	is_input_valid(char **args);
+int		is_input_valid(char **args);
+
+// utils.c
+void	free_args(char **args);
 
 #endif
