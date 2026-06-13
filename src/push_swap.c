@@ -6,7 +6,7 @@
 /*   By: pabartoc <pabartoc@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/24 19:15:31 by pabartoc          #+#    #+#             */
-/*   Updated: 2026/06/07 07:26:40 by pabartoc         ###   ########.fr       */
+/*   Updated: 2026/06/09 02:04:26 by pabartoc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,16 +24,15 @@ int	main(int argc, char **argv)
 	{
 		args = ft_split(argv[1], ' ');
 		if (!args)
-		{
-			ft_putstr_fd("Error\n", 2);
-			return (EXIT_FAILURE);
-		}
+			return (ft_putstr_fd("Error\n", 2), EXIT_FAILURE);
 	}
 	else
 		args = argv + 1;
 	if (!is_input_valid(args))
 	{
 		ft_putstr_fd("Error\n", 2);
+		if (args == 2)
+			free_args(args);
 		return (EXIT_FAILURE);
 	}
 	return (0);
