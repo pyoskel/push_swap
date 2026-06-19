@@ -6,7 +6,7 @@
 /*   By: pabartoc <pabartoc@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/24 19:15:31 by pabartoc          #+#    #+#             */
-/*   Updated: 2026/06/17 13:54:06 by pabartoc         ###   ########.fr       */
+/*   Updated: 2026/06/19 21:55:07 by pabartoc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@
 int	main(int argc, char **argv)
 {
 	char	**args;
+	t_node	new_node;
+	int		i;
 
 	if (argc == 1 || (argc == 2 && !argv[1][0]))
 		return (EXIT_FAILURE);
@@ -34,6 +36,11 @@ int	main(int argc, char **argv)
 			free_args(args);
 		return (ft_putstr_fd("Error\n", 2), EXIT_FAILURE);
 	}
+	i = 0;
+	while (args[i])
+	{
+		new_node = stack_new_node(ft_atoi(args[i]));
+	}
 	return (0);
 }
 
@@ -49,10 +56,7 @@ int	main(int argc, char **argv)
 // 		args = ft_split(argv[1], ' ');
 // 		// FEHLER-ABFANGEN: Wenn ft_split fehlschlägt (Malloc-Fail)
 // 		if (!args)
-// 		{
-// 			ft_putstr_fd("Error\n", 2);
-// 			return (EXIT_FAILURE);
-// 		}
+// 			return (ft_putstr_fd("Error\n", 2), EXIT_FAILURE);
 // 	}
 // 	else
 // 	{

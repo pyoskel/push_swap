@@ -6,7 +6,7 @@
 /*   By: pabartoc <pabartoc@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/24 19:15:33 by pabartoc          #+#    #+#             */
-/*   Updated: 2026/06/09 00:52:26 by pabartoc         ###   ########.fr       */
+/*   Updated: 2026/06/19 23:29:57 by pabartoc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,5 +32,8 @@ int		is_input_valid(char **args);
 
 // utils.c
 void	free_args(char **args);
+
+// stack_utils.c
+t_node	*stack_new_node(int value);
 
 #endif

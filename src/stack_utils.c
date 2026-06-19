@@ -6,13 +6,21 @@
 /*   By: pabartoc <pabartoc@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/18 13:40:24 by pabartoc          #+#    #+#             */
-/*   Updated: 2026/06/18 15:48:23 by pabartoc         ###   ########.fr       */
+/*   Updated: 2026/06/19 23:29:46 by pabartoc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-t_node	stack_new_node(int value)
+t_node	*stack_new_node(int nbr)
 {
+	t_node	*new_node;
 	
+	new_node = malloc(sizeof(t_node));
+	if (!new_node)
+		return (NULL);
+	new_node->value = nbr;
+	new_node->index = -1;
+	new_node->next = (NULL);
+	return (new_node);
 }
