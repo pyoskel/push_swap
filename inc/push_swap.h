@@ -6,7 +6,7 @@
 /*   By: pabartoc <pabartoc@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/24 19:15:33 by pabartoc          #+#    #+#             */
-/*   Updated: 2026/06/19 23:29:57 by pabartoc         ###   ########.fr       */
+/*   Updated: 2026/06/20 21:30:46 by pabartoc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,5 +35,6 @@ void	free_args(char **args);
 
 // stack_utils.c
 t_node	*stack_new_node(int value);
+void	stack_add_back(t_node **stack, t_node *new_node);
 
 #endif

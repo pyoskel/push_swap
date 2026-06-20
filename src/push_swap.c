@@ -6,7 +6,7 @@
 /*   By: pabartoc <pabartoc@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/24 19:15:31 by pabartoc          #+#    #+#             */
-/*   Updated: 2026/06/20 20:00:14 by pabartoc         ###   ########.fr       */
+/*   Updated: 2026/06/20 20:41:01 by pabartoc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@ int	main(int argc, char **argv)
 {
 	char	**args;
 	t_node	*new_node;
+	t_node	*stack_a;
 	int		i;
 
 	if (argc == 1 || (argc == 2 && !argv[1][0]))
@@ -46,6 +47,7 @@ int	main(int argc, char **argv)
 				free_args(args);
 			return (ft_putstr_fd("Error\n", 2), EXIT_FAILURE);
 		}
+		stack_add_back(stack_a, new_node);
 	}
 	return (0);
 }
