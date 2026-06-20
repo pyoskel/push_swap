@@ -6,18 +6,18 @@
 /*   By: pabartoc <pabartoc@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/24 19:15:31 by pabartoc          #+#    #+#             */
-/*   Updated: 2026/06/19 21:55:07 by pabartoc         ###   ########.fr       */
+/*   Updated: 2026/06/20 20:00:14 by pabartoc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 #include "libft.h"
-#include <stdio.h>
+#include <stdio.h> // temporarily
 
 int	main(int argc, char **argv)
 {
 	char	**args;
-	t_node	new_node;
+	t_node	*new_node;
 	int		i;
 
 	if (argc == 1 || (argc == 2 && !argv[1][0]))
@@ -40,6 +40,12 @@ int	main(int argc, char **argv)
 	while (args[i])
 	{
 		new_node = stack_new_node(ft_atoi(args[i]));
+		if (!new_node)
+		{
+			if (args == 2)
+				free_args(args);
+			return (ft_putstr_fd("Error\n", 2), EXIT_FAILURE);
+		}
 	}
 	return (0);
 }
