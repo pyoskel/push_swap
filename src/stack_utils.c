@@ -6,7 +6,7 @@
 /*   By: pabartoc <pabartoc@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/18 13:40:24 by pabartoc          #+#    #+#             */
-/*   Updated: 2026/06/20 21:29:35 by pabartoc         ###   ########.fr       */
+/*   Updated: 2026/06/20 23:03:17 by pabartoc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,25 @@ t_node	*stack_new_node(int nbr)
 	return (new_node);
 }
 
+t_node	*find_last(t_node *stack)
+{
+	if (!stack)
+		return (NULL);
+	while (stack->next)
+		stack = stack->next;
+	return (stack);	
+}
+
 void	stack_add_back(t_node **stack, t_node *new_node)
 {
-	
+	t_node	*last_node;
+
+	if (!stack || !new_node)
+		return ;
+	if (*stack == NULL)
+	{
+		last_node = new_node;
+		return ;
+	}
+	last_node = find_last(*stack);
 }
