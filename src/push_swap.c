@@ -6,7 +6,7 @@
 /*   By: pabartoc <pabartoc@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/24 19:15:31 by pabartoc          #+#    #+#             */
-/*   Updated: 2026/06/21 19:43:49 by pabartoc         ###   ########.fr       */
+/*   Updated: 2026/06/21 20:31:58 by pabartoc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -121,4 +121,5 @@ int	main(int argc, char **argv)
 // make
 // ./push_swap 1 2 2 (Duplikat)
 // ./push_swap 1 2 3000000000 (Überlauf)
+// ./push_swap 000000000000000000042 (is_length_valid)
 // ./push_swap 1 2 abc (no digit)
