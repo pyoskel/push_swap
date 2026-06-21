@@ -6,7 +6,7 @@
 /*   By: pabartoc <pabartoc@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/18 13:40:24 by pabartoc          #+#    #+#             */
-/*   Updated: 2026/06/21 18:46:21 by pabartoc         ###   ########.fr       */
+/*   Updated: 2026/06/21 19:54:55 by pabartoc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ void	stack_add_back(t_node **stack, t_node *new_node)
 		return ;
 	if (*stack == NULL)
 	{
-		last_node = new_node;
+		*stack = new_node;
 		return ;
 	}
 	last_node = find_last(*stack);
@@ -53,7 +53,7 @@ void	free_stack(t_node **stack)
 {
 	t_node	*temp;
 
-	if (!stack)
+	if (!stack || !*stack)
 		return ;
 	while (*stack)
 	{
