@@ -6,13 +6,25 @@
 /*   By: pabartoc <pabartoc@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/24 19:15:31 by pabartoc          #+#    #+#             */
-/*   Updated: 2026/06/21 18:52:18 by pabartoc         ###   ########.fr       */
+/*   Updated: 2026/06/21 19:01:19 by pabartoc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 #include "libft.h"
 #include <stdio.h> // temporarily
+
+// Temporäre Hilfsfunktion, um den fertigen Stack zu sehen
+void	print_stack(t_node *stack)
+{
+	printf("Stack A: ");
+	while (stack)
+	{
+		printf("[%d] -> ", stack->value);
+		stack = stack->next;
+	}
+	printf("NULL\n");
+}
 
 int	main(int argc, char **argv)
 {
@@ -53,6 +65,7 @@ int	main(int argc, char **argv)
 	}
 	if (argc == 2)
 		free_args(args);
+	print_stack(stack_a);
 	free_stack(stack_a);
 	return (0);
 }
