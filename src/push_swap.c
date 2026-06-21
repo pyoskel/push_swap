@@ -6,7 +6,7 @@
 /*   By: pabartoc <pabartoc@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/24 19:15:31 by pabartoc          #+#    #+#             */
-/*   Updated: 2026/06/21 18:30:40 by pabartoc         ###   ########.fr       */
+/*   Updated: 2026/06/21 18:52:18 by pabartoc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,6 +43,7 @@ int	main(int argc, char **argv)
 		new_node = stack_new_node(ft_atoi(args[i]));
 		if (!new_node)
 		{
+			free_stack(stack_a);
 			if (args == 2)
 				free_args(args);
 			return (ft_putstr_fd("Error\n", 2), EXIT_FAILURE);
