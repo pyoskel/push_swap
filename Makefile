@@ -6,11 +6,9 @@
 #    By: pabartoc <pabartoc@student.42heilbronn.    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/01/24 19:15:28 by pabartoc          #+#    #+#              #
-#    Updated: 2026/06/19 20:40:31 by pabartoc         ###   ########.fr        #
+#    Updated: 2026/06/21 19:33:33 by pabartoc         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
-
-.SILENT :
 
 NAME = push_swap
 
@@ -30,6 +28,7 @@ SRCS        = $(SRC_DIR)/push_swap.c \
 			  $(SRC_DIR)/stack_utils.c \
 			  $(SRC_DIR)/utils.c \
 			  $(SRC_DIR)/validation.c \
+
 OBJS        = $(SRCS:.c=.o)
 
 # Default rule
@@ -38,6 +37,9 @@ all: $(NAME)
 # Baut das eigentliche push_swap Programm
 $(NAME): $(LIBFT) $(OBJS)
 	$(CC) $(CFLAGS) $(OBJS) $(LIBFT) -o $(NAME)
+
+$(SRC_DIR)/%.o: $(SRC_DIR)/%.c
+	$(CC) $(CFLAGS) -c $< -o $@
 
 # Baut die libft, indem es in den libft-Ordner geht und dort 'make' ausführt
 $(LIBFT):
