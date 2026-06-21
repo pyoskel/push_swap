@@ -6,7 +6,7 @@
 /*   By: pabartoc <pabartoc@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/24 19:15:31 by pabartoc          #+#    #+#             */
-/*   Updated: 2026/06/21 19:01:19 by pabartoc         ###   ########.fr       */
+/*   Updated: 2026/06/21 19:37:35 by pabartoc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,7 @@ int	main(int argc, char **argv)
 	t_node	*stack_a;
 	int		i;
 
+	stack_a = NULL;
 	if (argc == 1 || (argc == 2 && !argv[1][0]))
 		return (EXIT_FAILURE);
 	if (argc == 2)
@@ -55,18 +56,21 @@ int	main(int argc, char **argv)
 		new_node = stack_new_node(ft_atoi(args[i]));
 		if (!new_node)
 		{
-			free_stack(stack_a);
+			free_stack(&stack_a);
 			if (args == 2)
 				free_args(args);
 			return (ft_putstr_fd("Error\n", 2), EXIT_FAILURE);
 		}
-		stack_add_back(stack_a, new_node);
+		stack_add_back(&stack_a, new_node);
 		i++;
 	}
 	if (argc == 2)
 		free_args(args);
+	// === TEST-CODE-3 ===
+	printf("\n--- Ergebniss ---\n");
 	print_stack(stack_a);
-	free_stack(stack_a);
+	// ==================
+	free_stack(&stack_a);
 	return (0);
 }
 
