@@ -6,20 +6,34 @@
 /*   By: pabartoc <pabartoc@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/24 19:15:31 by pabartoc          #+#    #+#             */
-/*   Updated: 2026/06/19 21:55:07 by pabartoc         ###   ########.fr       */
+/*   Updated: 2026/06/21 20:31:58 by pabartoc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 #include "libft.h"
-#include <stdio.h>
+#include <stdio.h> // temporarily
+
+// Temporäre Hilfsfunktion, um den fertigen Stack zu sehen
+void	print_stack(t_node *stack)
+{
+	printf("Stack A: ");
+	while (stack)
+	{
+		printf("[%d] -> ", stack->value);
+		stack = stack->next;
+	}
+	printf("NULL\n");
+}
 
 int	main(int argc, char **argv)
 {
 	char	**args;
-	t_node	new_node;
+	t_node	*new_node;
+	t_node	*stack_a;
 	int		i;
 
+	stack_a = NULL;
 	if (argc == 1 || (argc == 2 && !argv[1][0]))
 		return (EXIT_FAILURE);
 	if (argc == 2)
@@ -32,7 +46,7 @@ int	main(int argc, char **argv)
 		args = argv + 1;
 	if (!is_input_valid(args))
 	{
-		if (args == 2)
+		if (argc == 2)
 			free_args(args);
 		return (ft_putstr_fd("Error\n", 2), EXIT_FAILURE);
 	}
@@ -40,7 +54,23 @@ int	main(int argc, char **argv)
 	while (args[i])
 	{
 		new_node = stack_new_node(ft_atoi(args[i]));
+		if (!new_node)
+		{
+			free_stack(&stack_a);
+			if (argc == 2)
+				free_args(args);
+			return (ft_putstr_fd("Error\n", 2), EXIT_FAILURE);
+		}
+		stack_add_back(&stack_a, new_node);
+		i++;
 	}
+	if (argc == 2)
+		free_args(args);
+	// === TEST-CODE-3 ===
+	printf("\n--- Ergebniss ---\n");
+	print_stack(stack_a);
+	// ==================
+	free_stack(&stack_a);
 	return (0);
 }
 
@@ -91,4 +121,5 @@ int	main(int argc, char **argv)
 // make
 // ./push_swap 1 2 2 (Duplikat)
 // ./push_swap 1 2 3000000000 (Überlauf)
+// ./push_swap 000000000000000000042 (is_length_valid)
 // ./push_swap 1 2 abc (no digit)
