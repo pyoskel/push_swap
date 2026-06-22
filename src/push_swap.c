@@ -6,7 +6,7 @@
 /*   By: pabartoc <pabartoc@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/24 19:15:31 by pabartoc          #+#    #+#             */
-/*   Updated: 2026/06/22 23:13:26 by pabartoc         ###   ########.fr       */
+/*   Updated: 2026/06/23 00:42:03 by pabartoc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,6 +68,7 @@ int	main(int argc, char **argv)
 		free_args(args);
 	index_stack(&stack_a);
 	// === TEST-CODE-3 ===
+	sa(&stack_a);
 	printf("\n--- Ergebniss ---\n");
 	print_stack(stack_a);
 	// ==================
@@ -124,3 +125,19 @@ int	main(int argc, char **argv)
 // ./push_swap 1 2 3000000000 (Überlauf)
 // ./push_swap 000000000000000000042 (is_length_valid)
 // ./push_swap 1 2 abc (no digit)
+
+// =============================================================================
+
+// // === TEST-CODE-3 ===
+// printf("\n--- Ergebniss ---\n");
+// print_stack(stack_a);
+// // ==================
+
+// =============================================================================
+
+// === TEST-CODE-4 ===
+// For the swap function
+// sa(&stack_a);
+// printf("\n--- Ergebniss ---\n");
+// print_stack(stack_a);
+// ==================
