@@ -6,7 +6,7 @@
 /*   By: pabartoc <pabartoc@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/22 23:35:58 by pabartoc          #+#    #+#             */
-/*   Updated: 2026/06/23 00:40:56 by pabartoc         ###   ########.fr       */
+/*   Updated: 2026/06/23 00:48:02 by pabartoc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,13 +20,10 @@ static void	swap(t_node **stack)
 
 	if (!stack || !*stack || !(*stack)->next)
 		return ;
-
 	first = *stack;
 	second = first->next;
-
 	first->next = second->next;
 	second->next = first;
-
 	*stack = second;
 }
 

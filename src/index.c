@@ -6,7 +6,7 @@
 /*   By: pabartoc <pabartoc@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/22 02:53:01 by pabartoc          #+#    #+#             */
-/*   Updated: 2026/06/22 23:09:12 by pabartoc         ###   ########.fr       */
+/*   Updated: 2026/06/23 00:47:16 by pabartoc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,8 @@
 static t_node	*get_unindexed_smallest(t_node *stack)
 {
 	t_node	*smallest_node;
-	
-	smallest_node = NULL; 
+
+	smallest_node = NULL;
 	while (stack)
 	{
 		if (stack->index == -1)
@@ -36,12 +36,10 @@ void	index_stack(t_node **stack)
 	t_node	*smallest_node;
 	int		current_index;
 
-	current_index = 0; 
+	current_index = 0;
 	if (!stack || !*stack)
 		return ;
-	
 	smallest_node = get_unindexed_smallest(*stack);
-	
 	while (smallest_node != NULL)
 	{
 		smallest_node->index = current_index;
