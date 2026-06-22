@@ -6,7 +6,7 @@
 #    By: pabartoc <pabartoc@student.42heilbronn.    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/01/24 19:15:28 by pabartoc          #+#    #+#              #
-#    Updated: 2026/06/21 19:33:33 by pabartoc         ###   ########.fr        #
+#    Updated: 2026/06/22 19:43:18 by pabartoc         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -28,6 +28,7 @@ SRCS        = $(SRC_DIR)/push_swap.c \
 			  $(SRC_DIR)/stack_utils.c \
 			  $(SRC_DIR)/utils.c \
 			  $(SRC_DIR)/validation.c \
+			  $(SRC_DIR)/index.c
 
 OBJS        = $(SRCS:.c=.o)
 

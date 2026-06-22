@@ -6,7 +6,7 @@
 /*   By: pabartoc <pabartoc@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/24 19:15:31 by pabartoc          #+#    #+#             */
-/*   Updated: 2026/06/21 20:31:58 by pabartoc         ###   ########.fr       */
+/*   Updated: 2026/06/22 23:13:26 by pabartoc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ void	print_stack(t_node *stack)
 	printf("Stack A: ");
 	while (stack)
 	{
-		printf("[%d] -> ", stack->value);
+		printf("[%d, idx:%d] -> ", stack->value, stack->index);
 		stack = stack->next;
 	}
 	printf("NULL\n");
@@ -66,6 +66,7 @@ int	main(int argc, char **argv)
 	}
 	if (argc == 2)
 		free_args(args);
+	index_stack(&stack_a);
 	// === TEST-CODE-3 ===
 	printf("\n--- Ergebniss ---\n");
 	print_stack(stack_a);
