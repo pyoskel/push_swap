@@ -6,7 +6,7 @@
 /*   By: pabartoc <pabartoc@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/24 19:15:33 by pabartoc          #+#    #+#             */
-/*   Updated: 2026/06/23 00:33:36 by pabartoc         ###   ########.fr       */
+/*   Updated: 2026/06/23 01:43:36 by pabartoc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,5 +47,9 @@ void	index_stack(t_node **stack);
 void	sa(t_node **stack_a);
 void	sb(t_node **stack_b);
 void	ss(t_node **stack_a, t_node **stack_b);
+
+// push.c
+void	pa(t_node **stack_a, t_node **stack_b);
+void	pb(t_node **stack_a, t_node **stack_b);
 
 #endif

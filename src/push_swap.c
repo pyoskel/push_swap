@@ -6,7 +6,7 @@
 /*   By: pabartoc <pabartoc@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/24 19:15:31 by pabartoc          #+#    #+#             */
-/*   Updated: 2026/06/23 00:42:03 by pabartoc         ###   ########.fr       */
+/*   Updated: 2026/06/23 01:34:33 by pabartoc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,9 @@
 #include <stdio.h> // temporarily
 
 // Temporäre Hilfsfunktion, um den fertigen Stack zu sehen
-void	print_stack(t_node *stack)
+void	print_stack(t_node *stack, char stack_name)
 {
-	printf("Stack A: ");
+	printf("Stack %c: ", stack_name);
 	while (stack)
 	{
 		printf("[%d, idx:%d] -> ", stack->value, stack->index);
@@ -31,9 +31,11 @@ int	main(int argc, char **argv)
 	char	**args;
 	t_node	*new_node;
 	t_node	*stack_a;
+	t_node	*stack_b;
 	int		i;
 
 	stack_a = NULL;
+	stack_b = NULL;
 	if (argc == 1 || (argc == 2 && !argv[1][0]))
 		return (EXIT_FAILURE);
 	if (argc == 2)
@@ -67,12 +69,23 @@ int	main(int argc, char **argv)
 	if (argc == 2)
 		free_args(args);
 	index_stack(&stack_a);
-	// === TEST-CODE-3 ===
-	sa(&stack_a);
-	printf("\n--- Ergebniss ---\n");
-	print_stack(stack_a);
-	// ==================
+	// === UNSER GROSSER OPERATION-TEST ===
+	printf("\n--- VORHER ---\n");
+	print_stack(stack_a, 'A');
+	print_stack(stack_b, 'B');
+
+	printf("\n--- AKTIONEN ---\n");
+	// Lass uns ein bisschen mit den Zeigern spielen!
+	pb(&stack_a, &stack_b); // Schiebt das 1. Element von A nach B
+	pb(&stack_a, &stack_b); // Schiebt das NEUE 1. Element von A nach B
+	sa(&stack_a);           // Tauscht die ersten beiden Elemente, die jetzt noch auf A liegen
+
+	printf("\n--- NACHHER ---\n");
+	print_stack(stack_a, 'A');
+	print_stack(stack_b, 'B');
+	// =====================================
 	free_stack(&stack_a);
+	free_stack(&stack_b);
 	return (0);
 }
 
@@ -116,10 +129,9 @@ int	main(int argc, char **argv)
 // =============================================================================
 
 // === TEST-CODE-2 ===
+// For the validation.c function
 	// printf("Die Eingabe ist fehlerfrei!\n");
 // ============================
-// Test for validation.c
-
 // make
 // ./push_swap 1 2 2 (Duplikat)
 // ./push_swap 1 2 3000000000 (Überlauf)
@@ -129,6 +141,7 @@ int	main(int argc, char **argv)
 // =============================================================================
 
 // // === TEST-CODE-3 ===
+// For the stack_utils.c function
 // printf("\n--- Ergebniss ---\n");
 // print_stack(stack_a);
 // // ==================
@@ -136,8 +149,29 @@ int	main(int argc, char **argv)
 // =============================================================================
 
 // === TEST-CODE-4 ===
-// For the swap function
+// For the swap.c function
 // sa(&stack_a);
 // printf("\n--- Ergebniss ---\n");
 // print_stack(stack_a);
 // ==================
+
+// =============================================================================
+
+// // === TEST-CODE-5 ===
+// // For the push.c function
+// 	printf("\n--- VORHER ---\n");
+// 	print_stack(stack_a, 'A');
+// 	print_stack(stack_b, 'B');
+
+// 	printf("\n--- AKTIONEN ---\n");
+// 	// Lass uns ein bisschen mit den Zeigern spielen!
+// 	pb(&stack_a, &stack_b); // Schiebt das 1. Element von A nach B
+// 	pb(&stack_a, &stack_b); // Schiebt das NEUE 1. Element von A nach B
+// 	sa(&stack_a);           // Tauscht die ersten beiden Elemente, die jetzt noch auf A liegen
+
+// 	printf("\n--- NACHHER ---\n");
+// 	print_stack(stack_a, 'A');
+// 	print_stack(stack_b, 'B');
+// 	// =====================================
+
+// =============================================================================
