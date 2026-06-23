@@ -6,11 +6,11 @@
 /*   By: pabartoc <pabartoc@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/24 19:15:31 by pabartoc          #+#    #+#             */
-/*   Updated: 2026/06/23 02:57:49 by pabartoc         ###   ########.fr       */
+/*   Updated: 2026/06/24 00:39:25 by pabartoc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../inc/push_swap.h"
 #include "libft.h"
 #include <stdio.h> // temporarily
 
@@ -74,11 +74,8 @@ int	main(int argc, char **argv)
 	print_stack(stack_a, 'A');
 
 	printf("\n--- AKTIONEN ---\n");
-	ra(&stack_a);
+	radix_sort(&stack_a, &stack_b);
 	print_stack(stack_a, 'A'); // Die erste Zahl sollte jetzt ganz hinten sein!
-	
-	rra(&stack_a); 
-	print_stack(stack_a, 'A'); // Wir drehen es zurück. Es sollte wieder wie am Anfang aussehen!
 	// =====================================
 	free_stack(&stack_a);
 	free_stack(&stack_b);
