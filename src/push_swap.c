@@ -6,7 +6,7 @@
 /*   By: pabartoc <pabartoc@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/24 19:15:31 by pabartoc          #+#    #+#             */
-/*   Updated: 2026/06/23 01:34:33 by pabartoc         ###   ########.fr       */
+/*   Updated: 2026/06/23 02:57:49 by pabartoc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,20 +69,16 @@ int	main(int argc, char **argv)
 	if (argc == 2)
 		free_args(args);
 	index_stack(&stack_a);
-	// === UNSER GROSSER OPERATION-TEST ===
+	// === OPERATION-TEST ===
 	printf("\n--- VORHER ---\n");
 	print_stack(stack_a, 'A');
-	print_stack(stack_b, 'B');
 
 	printf("\n--- AKTIONEN ---\n");
-	// Lass uns ein bisschen mit den Zeigern spielen!
-	pb(&stack_a, &stack_b); // Schiebt das 1. Element von A nach B
-	pb(&stack_a, &stack_b); // Schiebt das NEUE 1. Element von A nach B
-	sa(&stack_a);           // Tauscht die ersten beiden Elemente, die jetzt noch auf A liegen
-
-	printf("\n--- NACHHER ---\n");
-	print_stack(stack_a, 'A');
-	print_stack(stack_b, 'B');
+	ra(&stack_a);
+	print_stack(stack_a, 'A'); // Die erste Zahl sollte jetzt ganz hinten sein!
+	
+	rra(&stack_a); 
+	print_stack(stack_a, 'A'); // Wir drehen es zurück. Es sollte wieder wie am Anfang aussehen!
 	// =====================================
 	free_stack(&stack_a);
 	free_stack(&stack_b);
@@ -167,11 +163,29 @@ int	main(int argc, char **argv)
 // 	// Lass uns ein bisschen mit den Zeigern spielen!
 // 	pb(&stack_a, &stack_b); // Schiebt das 1. Element von A nach B
 // 	pb(&stack_a, &stack_b); // Schiebt das NEUE 1. Element von A nach B
-// 	sa(&stack_a);           // Tauscht die ersten beiden Elemente, die jetzt noch auf A liegen
+// 	sa(&stack_a);
+// // Tauscht die ersten beiden Elemente, die jetzt noch auf A liegen
 
 // 	printf("\n--- NACHHER ---\n");
 // 	print_stack(stack_a, 'A');
 // 	print_stack(stack_b, 'B');
+// 	// =====================================
+
+// =============================================================================
+
+// // === TEST-CODE-6 ===
+// // For the rotate.c & rev_rotate.c function
+	// printf("\n--- VORHER ---\n");
+	// print_stack(stack_a, 'A');
+
+	// printf("\n--- AKTIONEN ---\n");
+	// ra(&stack_a);
+	// print_stack(stack_a, 'A');
+// // Die erste Zahl sollte jetzt ganz hinten sein!
+
+	// rra(&stack_a); 
+	// print_stack(stack_a, 'A');
+// // Wir drehen es zurück. Es sollte wieder wie am Anfang aussehen!
 // 	// =====================================
 
 // =============================================================================
