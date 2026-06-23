@@ -6,7 +6,7 @@
 /*   By: pabartoc <pabartoc@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/24 19:15:33 by pabartoc          #+#    #+#             */
-/*   Updated: 2026/06/23 02:52:55 by pabartoc         ###   ########.fr       */
+/*   Updated: 2026/06/23 21:01:16 by pabartoc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,5 +61,8 @@ void	rr(t_node **stack_a, t_node **stack_b);
 void	rra(t_node **stack_a);
 void	rrb(t_node **stack_b);
 void	rrr(t_node **stack_a, t_node **stack_b);
+
+// radix.c
+void	radix_sort(t_node **stack_a, t_node **stack_b);
 
 #endif
