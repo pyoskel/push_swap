@@ -6,24 +6,11 @@
 /*   By: pabartoc <pabartoc@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/23 19:04:48 by pabartoc          #+#    #+#             */
-/*   Updated: 2026/06/24 00:36:54 by pabartoc         ###   ########.fr       */
+/*   Updated: 2026/06/24 23:53:36 by pabartoc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/push_swap.h"
-
-static int	get_stack_size(t_node *stack)
-{
-	int	size;
-
-	size = 0;
-	while (stack)
-	{
-		size++;
-		stack = stack->next;
-	}
-	return (size);
-}
 
 static int	get_max_bits(t_node **stack)
 {

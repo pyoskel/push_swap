@@ -6,7 +6,7 @@
 /*   By: pabartoc <pabartoc@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/24 19:15:33 by pabartoc          #+#    #+#             */
-/*   Updated: 2026/06/23 21:01:16 by pabartoc         ###   ########.fr       */
+/*   Updated: 2026/06/25 00:03:41 by pabartoc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,7 @@ t_node	*stack_new_node(int value);
 t_node	*find_last(t_node *stack);
 void	stack_add_back(t_node **stack, t_node *new_node);
 void	free_stack(t_node **stack);
+int		get_stack_size(t_node *stack);
 
 // index.c
 void	index_stack(t_node **stack);
@@ -64,5 +65,8 @@ void	rrr(t_node **stack_a, t_node **stack_b);
 
 // radix.c
 void	radix_sort(t_node **stack_a, t_node **stack_b);
+
+// small_sort.c  
+void	sort_3(t_node **stack_a);
 
 #endif

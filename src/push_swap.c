@@ -6,7 +6,7 @@
 /*   By: pabartoc <pabartoc@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/24 19:15:31 by pabartoc          #+#    #+#             */
-/*   Updated: 2026/06/24 20:40:26 by pabartoc         ###   ########.fr       */
+/*   Updated: 2026/06/24 23:58:43 by pabartoc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,7 +84,12 @@ int	main(int argc, char **argv)
 	if (!is_sorted(stack_a))
 	{
 		index_stack(&stack_a);
-		radix_sort(&stack_a, &stack_b);
+		if (get_stack_size(stack_a) == 2)
+			sa(&stack_a);
+		else if (get_stack_size(stack_a) == 3)
+			sort_3(&stack_a);
+		else
+			radix_sort(&stack_a, &stack_b);
 	}
 	free_stack(&stack_a);
 	free_stack(&stack_b);
