@@ -6,11 +6,11 @@
 /*   By: pabartoc <pabartoc@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/18 13:40:24 by pabartoc          #+#    #+#             */
-/*   Updated: 2026/06/23 00:48:55 by pabartoc         ###   ########.fr       */
+/*   Updated: 2026/06/24 17:46:21 by pabartoc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../inc/push_swap.h"
 
 t_node	*stack_new_node(int nbr)
 {

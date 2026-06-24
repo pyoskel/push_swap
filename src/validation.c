@@ -6,11 +6,11 @@
 /*   By: pabartoc <pabartoc@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/07 01:48:46 by pabartoc          #+#    #+#             */
-/*   Updated: 2026/06/21 20:28:00 by pabartoc         ###   ########.fr       */
+/*   Updated: 2026/06/24 17:47:01 by pabartoc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../inc/push_swap.h"
 #include "libft.h"
 
 static int	is_number(char *str)

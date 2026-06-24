@@ -6,11 +6,11 @@
 /*   By: pabartoc <pabartoc@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/07 07:38:54 by pabartoc          #+#    #+#             */
-/*   Updated: 2026/06/09 01:48:30 by pabartoc         ###   ########.fr       */
+/*   Updated: 2026/06/24 17:46:44 by pabartoc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../inc/push_swap.h"
 
 void	free_args(char **args)
 {

@@ -6,11 +6,11 @@
 /*   By: pabartoc <pabartoc@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/22 02:53:01 by pabartoc          #+#    #+#             */
-/*   Updated: 2026/06/23 00:47:16 by pabartoc         ###   ########.fr       */
+/*   Updated: 2026/06/24 17:32:56 by pabartoc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../inc/push_swap.h"
 
 // Sucht den Knoten mit der absolut kleinsten Zahl, der noch den Index -1 hat
 static t_node	*get_unindexed_smallest(t_node *stack)

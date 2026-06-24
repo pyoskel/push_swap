@@ -6,11 +6,11 @@
 /*   By: pabartoc <pabartoc@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/23 00:01:54 by pabartoc          #+#    #+#             */
-/*   Updated: 2026/06/23 02:55:06 by pabartoc         ###   ########.fr       */
+/*   Updated: 2026/06/24 17:46:15 by pabartoc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../inc/push_swap.h"
 #include "libft.h"
 
 static void	rotate(t_node **stack)
