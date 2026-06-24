@@ -6,7 +6,7 @@
 /*   By: pabartoc <pabartoc@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/24 19:15:33 by pabartoc          #+#    #+#             */
-/*   Updated: 2026/06/25 00:03:41 by pabartoc         ###   ########.fr       */
+/*   Updated: 2026/06/25 00:27:24 by pabartoc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,5 +68,6 @@ void	radix_sort(t_node **stack_a, t_node **stack_b);
 
 // small_sort.c  
 void	sort_3(t_node **stack_a);
+void    sort_4_5(t_node **stack_a, t_node **stack_b);
 
 #endif
