@@ -6,7 +6,7 @@
 /*   By: pabartoc <pabartoc@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/24 19:15:31 by pabartoc          #+#    #+#             */
-/*   Updated: 2026/06/24 00:39:25 by pabartoc         ###   ########.fr       */
+/*   Updated: 2026/06/24 20:40:26 by pabartoc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,15 +15,28 @@
 #include <stdio.h> // temporarily
 
 // Temporäre Hilfsfunktion, um den fertigen Stack zu sehen
-void	print_stack(t_node *stack, char stack_name)
+// void	print_stack(t_node *stack, char stack_name)
+// {
+// 	printf("Stack %c: ", stack_name);
+// 	while (stack)
+// 	{
+// 		printf("[%d, idx:%d] -> ", stack->value, stack->index);
+// 		stack = stack->next;
+// 	}
+// 	printf("NULL\n");
+// }
+
+static int	is_sorted(t_node *stack)
 {
-	printf("Stack %c: ", stack_name);
-	while (stack)
+	if (!stack || !stack->next)
+		return (1);
+	while (stack->next)
 	{
-		printf("[%d, idx:%d] -> ", stack->value, stack->index);
+		if (stack->value > stack->next->value)
+			return (0);
 		stack = stack->next;
 	}
-	printf("NULL\n");
+	return (1);
 }
 
 int	main(int argc, char **argv)
@@ -68,15 +81,11 @@ int	main(int argc, char **argv)
 	}
 	if (argc == 2)
 		free_args(args);
-	index_stack(&stack_a);
-	// === OPERATION-TEST ===
-	printf("\n--- VORHER ---\n");
-	print_stack(stack_a, 'A');
-
-	printf("\n--- AKTIONEN ---\n");
-	radix_sort(&stack_a, &stack_b);
-	print_stack(stack_a, 'A'); // Die erste Zahl sollte jetzt ganz hinten sein!
-	// =====================================
+	if (!is_sorted(stack_a))
+	{
+		index_stack(&stack_a);
+		radix_sort(&stack_a, &stack_b);
+	}
 	free_stack(&stack_a);
 	free_stack(&stack_b);
 	return (0);
