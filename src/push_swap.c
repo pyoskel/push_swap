@@ -6,7 +6,7 @@
 /*   By: pabartoc <pabartoc@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/24 19:15:31 by pabartoc          #+#    #+#             */
-/*   Updated: 2026/06/25 02:22:27 by pabartoc         ###   ########.fr       */
+/*   Updated: 2026/06/25 02:52:58 by pabartoc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -95,7 +95,7 @@ int	main(int argc, char **argv)
 		args = ft_split(argv[1], ' ');
 	else
 		args = argv + 1;
-	if (!is_input_valid(args) || !init_stack(&stack_a, args))
+	if (!args || !is_input_valid(args) || !init_stack(&stack_a, args))
 		return (free_and_error(&stack_a, args, argc));
 	if (argc == 2)
 		free_args(args);
