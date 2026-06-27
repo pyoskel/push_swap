@@ -175,6 +175,50 @@ ARG=$(seq 1 5000 | shuf -n 500 | tr '\n' ' '); \
 
 ---
 
+## 📊 Visualizer
+
+This project includes support for the [push_swap_visualizer](https://github.com/o-reo/push_swap_visualizer) by `o-reo` to visually demonstrate the Radix Sort algorithm in action.
+
+### Prerequisites (Linux)
+To compile and run the visualizer, you need a few standard graphics and build dependencies. You can install them via:
+```bash
+sudo apt-get update
+sudo apt-get install cmake g++ clang libgl1-mesa-dev libglu1-mesa-dev libx11-dev libxrandr-dev libudev-dev libfreetype-dev
+```
+
+### Setup & Installation
+1. **Compile the main program:** Ensure that the `push_swap` executable is built before running the visualizer.
+   ```bash
+   make
+   ```
+2. **Clone the visualizer:**
+   ```bash
+   git clone [https://github.com/o-reo/push_swap_visualizer.git](https://github.com/o-reo/push_swap_visualizer.git)
+   ```
+3. **Build the visualizer:** Navigate into the visualizer directory, create a build folder, and compile it.
+   ```bash
+   cd push_swap_visualizer
+   mkdir build && cd build
+   cmake ..
+   make
+   ```
+
+### Usage
+1. Launch the visualizer from inside the `build` directory:
+   ```bash
+   ./bin/visualizer
+   ```
+2. In the **Values** window on the right:
+   - Enter the desired amount of numbers to sort (e.g., `100` or `500`).
+   - Click **Shuffle** to generate a random stack.
+   - Verify the **push_swap file path**. By default, it is set to `../../push_swap`. *(Note: If the visualizer does not register the commands, provide the **absolute path** to the executable).*
+   - Click **Compute**. Wait a second until the status next to the button changes from `...` to **OK**.
+3. In the **Controls** window:
+   - Adjust the **Speed** slider (otherwise the animation might be very slow).
+   - Click **Start** to watch the sorting process!
+
+---
+
 ## 📚 Resources & Sources
 
 The following resources were incredibly helpful for understanding the underlying data structures, bitwise manipulation, and 42-specific constraints required to complete this project:
