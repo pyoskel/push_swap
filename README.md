@@ -193,7 +193,7 @@ sudo apt-get install cmake g++ clang libgl1-mesa-dev libglu1-mesa-dev libx11-dev
    ```
 2. **Clone the visualizer:**
    ```bash
-   git clone [https://github.com/o-reo/push_swap_visualizer.git](https://github.com/o-reo/push_swap_visualizer.git)
+   git clone https://github.com/o-reo/push_swap_visualizer.git push_swap_visualizer
    ```
 3. **Build the visualizer:** Navigate into the visualizer directory, create a build folder, and compile it.
    ```bash
