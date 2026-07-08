@@ -6,7 +6,7 @@
 /*   By: pabartoc <pabartoc@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/23 19:04:48 by pabartoc          #+#    #+#             */
-/*   Updated: 2026/06/24 23:53:36 by pabartoc         ###   ########.fr       */
+/*   Updated: 2026/07/08 21:32:35 by pabartoc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,3 +58,17 @@ void	radix_sort(t_node **stack_a, t_node **stack_b)
 		i++;
 	}
 }
+
+// befor while (*stack_b)
+// // =========================================================
+// printf("\n--- Mitten in Bit %d ---\n", i);
+// print_stack(*stack_a, 'A');
+// print_stack(*stack_b, 'B');
+// printf("--- Ende in Bit %d ---\n", i);
+// // =========================================================
+
+// after while (*stack_b)
+// // =========================================================
+// printf("\n=== Nach Durchlauf für Bit %d ===\n", i);
+// print_stack(*stack_a, 'A');
+// // =========================================================

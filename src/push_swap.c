@@ -6,15 +6,14 @@
 /*   By: pabartoc <pabartoc@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/24 19:15:31 by pabartoc          #+#    #+#             */
-/*   Updated: 2026/06/25 02:52:58 by pabartoc         ###   ########.fr       */
+/*   Updated: 2026/07/08 21:34:47 by pabartoc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/push_swap.h"
 #include "libft.h"
-// #include <stdio.h> // temporarily
 
-// Temporäre Hilfsfunktion, um den fertigen Stack zu sehen
+// //Temporäre Hilfsfunktion, um den fertigen Stack zu sehen
 // void	print_stack(t_node *stack, char stack_name)
 // {
 // 	printf("Stack %c: ", stack_name);
@@ -213,3 +212,18 @@ int	main(int argc, char **argv)
 // 	// =====================================
 
 // =============================================================================
+
+// // === FINAL-TEST-CODE ===
+// 	if (!is_sorted(stack_a))
+// 	{
+// 		index_stack(&stack_a);
+
+// 		printf("\n=== START-ZUSTAND (Nach Indexing) ===\n");
+// 		print_stack(stack_a, 'A');
+
+// 		sort_stacks(&stack_a, &stack_b);
+
+// 		printf("\n=== FINALES ERGEBNIS ===\n");
+// 		print_stack(stack_a, 'A');
+// 	}
+// 	// ===============================

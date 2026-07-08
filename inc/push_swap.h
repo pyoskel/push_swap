@@ -6,7 +6,7 @@
 /*   By: pabartoc <pabartoc@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/24 19:15:33 by pabartoc          #+#    #+#             */
-/*   Updated: 2026/06/25 01:44:39 by pabartoc         ###   ########.fr       */
+/*   Updated: 2026/07/08 21:35:31 by pabartoc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,16 +16,19 @@
 /* --- Standard Bibliotheken --- */
 # include <stdlib.h> // for malloc and free
 # include <unistd.h> // for write
+// # include <stdio.h> // WICHTIG: Für printf während des Testens!
 
-/* --- Datenstrukturen --- */
-
-// Das ist unser "Listen-Element" (Node) für die Linked List
+/* --- Datenstruktur --- */
+// (Node) für die Linked List
 typedef struct s_node
 {
 	int				value; // Die echte Zahl aus dem Input (z.B. -42, 100)
-	int				index; // Der Rang für deinen Algorithmus (z.B. 0, 1, 2...)
-	struct s_node	*next; // Der "Schnitzeljagd"-Zeiger auf das nächste Element
+	int				index; // Der Rang für den Algorithmus (z.B. 0, 1, 2...)
+	struct s_node	*next; // Zeiger auf das nächste Element
 }					t_node;
+
+/* --- TESTER-Prototyp --- */
+// void	print_stack(t_node *stack, char stack_name);
 
 /* --- Funktions-Prototypen --- */
 // validation.c
