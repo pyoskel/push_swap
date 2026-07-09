@@ -1,0 +1,18 @@
+# Standard Executables
+a.out
+*.out
+
+# Kompilierte Object-Files und Bibliotheken
+*.o
+*.a
+
+# Editor und temporäre Dateien (Vim, VS Code, etc.)
+*.swp
+*~
+.vscode/
+
+# macOS / Linux System-Dateien
+.DS_Store
+.DS_Store?
+._*
+.Trashes
