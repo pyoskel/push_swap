@@ -6,14 +6,14 @@
 /*   By: pabartoc <pabartoc@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/24 19:15:31 by pabartoc          #+#    #+#             */
-/*   Updated: 2026/07/08 21:34:47 by pabartoc         ###   ########.fr       */
+/*   Updated: 2026/07/09 23:08:07 by pabartoc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/push_swap.h"
 #include "libft.h"
 
-// //Temporäre Hilfsfunktion, um den fertigen Stack zu sehen
+// // Temporary helper function to view the finished stack
 // void	print_stack(t_node *stack, char stack_name)
 // {
 // 	printf("Stack %c: ", stack_name);
@@ -112,21 +112,21 @@ int	main(int argc, char **argv)
 // int	main(int argc, char **argv)
 // {
 // 	char	**args;
-// 	// 1. Wenn keine Argumente oder ein leerer String übergeben wurden
+// 	// 1. If no arguments or an empty string were passed
 // 	if (argc == 1 || (argc == 2 && !argv[1][0]))
 // 		return (EXIT_FAILURE);
 // 	if (argc == 2)
 // 	{
 // 		args = ft_split(argv[1], ' ');
-// 		// FEHLER-ABFANGEN: Wenn ft_split fehlschlägt (Malloc-Fail)
+// 		// ERROR-HANDLING: If ft_split fails (Malloc fail)
 // 		if (!args)
 // 			return (ft_putstr_fd("Error\n", 2), EXIT_FAILURE);
 // 	}
 // 	else
 // 	{
-// 		// Wenn die Argumente einzeln übergeben wurden (z.B. ./push_swap 3 2 5)
-// 		// Wir überspringen argv[0] ("./push_swap")
-//		// und zeigen direkt auf die Zahlen
+// 		// If the arguments were passed individually (e.g., ./push_swap 3 2 5)
+// 		// We skip argv[0] ("./push_swap")
+//		// and point directly to the numbers
 // 		args = argv + 1;
 // 	}
 	// 	// === TEMP TEST-CODE ===
@@ -137,7 +137,7 @@ int	main(int argc, char **argv)
 	// 	printf("args[%d] = %s\n", i, args[i]);
 	// 	i++;
 	// }
-// 	printf("--- TEST ENDE ---\n");
+// 	printf("--- TEST END ---\n");
 // 	// ============================
 // 	// make
 // 	// ./push_swap "42 1337 -5 0"
@@ -149,11 +149,11 @@ int	main(int argc, char **argv)
 
 // === TEST-CODE-2 ===
 // For the validation.c function
-	// printf("Die Eingabe ist fehlerfrei!\n");
+	// printf("The input is valid!\n");
 // ============================
 // make
-// ./push_swap 1 2 2 (Duplikat)
-// ./push_swap 1 2 3000000000 (Überlauf)
+// ./push_swap 1 2 2 (Duplicate)
+// ./push_swap 1 2 3000000000 (Integer overflow)
 // ./push_swap 000000000000000000042 (is_length_valid)
 // ./push_swap 1 2 abc (no digit)
 
@@ -161,7 +161,7 @@ int	main(int argc, char **argv)
 
 // // === TEST-CODE-3 ===
 // For the stack_utils.c function
-// printf("\n--- Ergebniss ---\n");
+// printf("\n--- Result ---\n");
 // print_stack(stack_a);
 // // ==================
 
@@ -170,7 +170,7 @@ int	main(int argc, char **argv)
 // === TEST-CODE-4 ===
 // For the swap.c function
 // sa(&stack_a);
-// printf("\n--- Ergebniss ---\n");
+// printf("\n--- Result ---\n");
 // print_stack(stack_a);
 // ==================
 
@@ -178,18 +178,17 @@ int	main(int argc, char **argv)
 
 // // === TEST-CODE-5 ===
 // // For the push.c function
-// 	printf("\n--- VORHER ---\n");
+// 	printf("\n--- BEFORE ---\n");
 // 	print_stack(stack_a, 'A');
 // 	print_stack(stack_b, 'B');
 
-// 	printf("\n--- AKTIONEN ---\n");
-// 	// Lass uns ein bisschen mit den Zeigern spielen!
-// 	pb(&stack_a, &stack_b); // Schiebt das 1. Element von A nach B
-// 	pb(&stack_a, &stack_b); // Schiebt das NEUE 1. Element von A nach B
+// 	printf("\n--- ACTIONS ---\n");
+// 	pb(&stack_a, &stack_b); // Pushes the 1st element from A to B
+// 	pb(&stack_a, &stack_b); // Pushes the NEW 1st element from A to B
 // 	sa(&stack_a);
-// // Tauscht die ersten beiden Elemente, die jetzt noch auf A liegen
+// // Swaps the first two elements currently remaining on stack A
 
-// 	printf("\n--- NACHHER ---\n");
+// 	printf("\n--- AFTER ---\n");
 // 	print_stack(stack_a, 'A');
 // 	print_stack(stack_b, 'B');
 // 	// =====================================
@@ -198,17 +197,17 @@ int	main(int argc, char **argv)
 
 // // === TEST-CODE-6 ===
 // // For the rotate.c & rev_rotate.c function
-	// printf("\n--- VORHER ---\n");
+	// printf("\n--- AFTER ---\n");
 	// print_stack(stack_a, 'A');
 
-	// printf("\n--- AKTIONEN ---\n");
+	// printf("\n--- ACTIONS ---\n");
 	// ra(&stack_a);
 	// print_stack(stack_a, 'A');
-// // Die erste Zahl sollte jetzt ganz hinten sein!
+// // The first number should now be at the very bottom!
 
 	// rra(&stack_a); 
 	// print_stack(stack_a, 'A');
-// // Wir drehen es zurück. Es sollte wieder wie am Anfang aussehen!
+// // We reverse rotate it. It should look exactly like the beginning again!
 // 	// =====================================
 
 // =============================================================================
@@ -218,12 +217,12 @@ int	main(int argc, char **argv)
 // 	{
 // 		index_stack(&stack_a);
 
-// 		printf("\n=== START-ZUSTAND (Nach Indexing) ===\n");
+// 		printf("\n=== START STATE (After indexing) ===\n");
 // 		print_stack(stack_a, 'A');
 
 // 		sort_stacks(&stack_a, &stack_b);
 
-// 		printf("\n=== FINALES ERGEBNIS ===\n");
+// 		printf("\n=== FINAL RESULT ===\n");
 // 		print_stack(stack_a, 'A');
 // 	}
 // 	// ===============================

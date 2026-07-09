@@ -6,31 +6,35 @@
 /*   By: pabartoc <pabartoc@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/24 19:15:33 by pabartoc          #+#    #+#             */
-/*   Updated: 2026/07/08 21:35:31 by pabartoc         ###   ########.fr       */
+/*   Updated: 2026/07/09 23:14:14 by pabartoc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
 
-/* --- Standard Bibliotheken --- */
+/* --- Standard Libraries --- */
 # include <stdlib.h> // for malloc and free
 # include <unistd.h> // for write
-// # include <stdio.h> // WICHTIG: Für printf während des Testens!
+// # include <stdio.h> // IMPORTANT: For printf during testing!
 
-/* --- Datenstruktur --- */
-// (Node) für die Linked List
+/* --- Data Structure --- */
+// (Node) for the linked list
 typedef struct s_node
 {
-	int				value; // Die echte Zahl aus dem Input (z.B. -42, 100)
-	int				index; // Der Rang für den Algorithmus (z.B. 0, 1, 2...)
-	struct s_node	*next; // Zeiger auf das nächste Element
+	int				value;
+	int				index;
+	struct s_node	*next;
 }					t_node;
 
-/* --- TESTER-Prototyp --- */
+// value = The actual number from the input (e.g., -42, 100)
+// index = The rank for the algorithm (e.g., 0, 1, 2...)
+// *next = Pointer to the next element
+
+/* --- TESTER Prototype --- */
 // void	print_stack(t_node *stack, char stack_name);
 
-/* --- Funktions-Prototypen --- */
+/* --- Function Prototypes --- */
 // validation.c
 int		is_input_valid(char **args);
 
