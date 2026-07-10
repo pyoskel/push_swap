@@ -6,7 +6,7 @@
 /*   By: pabartoc <pabartoc@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/24 19:15:33 by pabartoc          #+#    #+#             */
-/*   Updated: 2026/07/09 23:14:14 by pabartoc         ###   ########.fr       */
+/*   Updated: 2026/07/10 22:29:21 by pabartoc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 /* --- Standard Libraries --- */
 # include <stdlib.h> // for malloc and free
 # include <unistd.h> // for write
+# include <limits.h> // for INT_MAX and INT_MIN
 // # include <stdio.h> // IMPORTANT: For printf during testing!
 
 /* --- Data Structure --- */

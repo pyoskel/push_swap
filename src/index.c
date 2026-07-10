@@ -6,13 +6,13 @@
 /*   By: pabartoc <pabartoc@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/22 02:53:01 by pabartoc          #+#    #+#             */
-/*   Updated: 2026/06/24 17:32:56 by pabartoc         ###   ########.fr       */
+/*   Updated: 2026/07/10 22:30:30 by pabartoc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/push_swap.h"
 
-// Sucht den Knoten mit der absolut kleinsten Zahl, der noch den Index -1 hat
+// Find the node with the absolute smallest number that still has an index of -1
 static t_node	*get_unindexed_smallest(t_node *stack)
 {
 	t_node	*smallest_node;
@@ -30,7 +30,7 @@ static t_node	*get_unindexed_smallest(t_node *stack)
 	return (smallest_node);
 }
 
-// Weist jedem Knoten seinen finalen Rang (Index) zu
+// Assigns a final rank (index) to each node
 void	index_stack(t_node **stack)
 {
 	t_node	*smallest_node;

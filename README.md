@@ -10,9 +10,11 @@ The challenge lies not only in writing a functional sorting algorithm but also i
 
 ---
 
-## 🧠 The Algorithmic Strategy
+## 🧠 The Algorithm: Radix Sort (Bitwise)
 
-This project uses a hybrid approach that dynamically adapts to the size of the input stack to guarantee the most efficient solution.
+Radix Sort is a non-comparative sorting algorithm. Instead of directly comparing numbers (like Quicksort or Merge Sort), Radix Sort categorizes numbers based on their individual digits.
+
+For this project, **Binary Radix Sort (Base 2)** is the perfect fit. Since we are operating on a bit level, we can perfectly map the algorithm's needs to our available stack commands (`ra` and `pb`).
 
 ### 1. Parsing & Validation
 Before any sorting occurs, the input goes through a rigorous safety check:
@@ -20,14 +22,57 @@ Before any sorting occurs, the input goes through a rigorous safety check:
 * Checks for non-numeric characters.
 * A built-in "Overflow Protection" (length validation) that prevents Segmentation Faults from astronomically large inputs (e.g., `9999999999999999999`) before `ft_atol` is even called.
 
-### 2. Stack Normalization (Indexing)
-Instead of calculating with the actual, chaotic integer values (e.g., `-999`, `42`, `2000000`), the stack is assigned a ranking system. The absolute smallest number gets the rank/index `0`, the second smallest gets `1`, up to `N-1`. 
-This eliminates the problem of negative numbers and massive gaps between values, perfectly preparing the stack for bitwise comparison.
+### 2. Preparation: Indexing (Handling Negative Numbers)
+Since `push_swap` can receive negative numbers, and bitwise operations on two's complement negative integers are highly complex, we use a trick beforehand: **Indexing**.
+
+Before the actual Radix Sort begins, every number is assigned an index from `0` to `N-1` based on its relative size.
+*Example:* `[-10, 50, 15]` becomes the indices `[0, 2, 1]`.
+Now we only have to sort positive, continuous indices, which makes bitwise operations extremely straightforward!
 
 ### 3. Small Sort (Up to 5 Elements)
 For tiny stacks, the main algorithm is too expensive. A highly optimized, hardcoded logic is used instead:
 * **The Equator Logic (`size / 2`):** The stack is logically divided in half. To bring a specific number to the top, the program calculates the geometrically shortest path in milliseconds. If the number is in the upper half, it rotates forward (`ra`). If it has crossed the "equator" into the lower half, rotating backwards through the bottom of the stack (`rra`) is mathematically shorter.
 
+### ⚙️ 4. How the Bitwise Logic Works
+We iterate bit by bit from right to left (from the least significant bit to the most significant bit). In each pass, we check the current bit of every index in **Stack A**.
+
+**The Golden Rule for each bit-pass:**
+1. If the current bit is a **`0`** ➔ Push to Stack B (`pb`).
+2. If the current bit is a **`1`** ➔ Rotate up in Stack A (`ra`).
+
+After all numbers in Stack A have been processed for the current bit, we push everything from Stack B back to Stack A (`pa`). We repeat this process for the next bit until we reach the maximum bit-length of our largest index.
+
+### 🔍 A Simple Example
+Let's sort the indices **`3, 0, 1, 2`**.
+Their binary representations are: `00` (0), `01` (1), `10` (2), `11` (3).
+
+**Starting State (Stack A):** `[3, 0, 1, 2]` -> `[11, 00, 01, 10]`
+
+**1st Pass (Checking the 1st bit from the right):**
+* `3` (1**1**): Bit is `1` ➔ `ra`
+* `0` (0**0**): Bit is `0` ➔ `pb`
+* `1` (0**1**): Bit is `1` ➔ `ra`
+* `2` (1**0**): Bit is `0` ➔ `pb`
+
+*Status after Pass 1:* 
+* Stack A: `[3, 1]` | Stack B: `[2, 0]` 
+* *Push everything back (`pa`)* ➔ **New Stack A:** `[0, 2, 3, 1]` (`[00, 10, 11, 01]`)
+
+**2nd Pass (Checking the 2nd bit from the right):**
+* `0` (**0**0): Bit is `0` ➔ `pb`
+* `2` (**1**0): Bit is `1` ➔ `ra`
+* `3` (**1**1): Bit is `1` ➔ `ra`
+* `1` (**0**1): Bit is `0` ➔ `pb`
+
+*Status after Pass 2:* 
+* Stack A: `[2, 3]` | Stack B: `[1, 0]`
+* *Push everything back (`pa`)* ➔ **Final Stack A:** `[0, 1, 2, 3]` 🎉 **SORTED!**
+
+**The END**
+* `0` (**0**0):
+* `1` (**0**1):
+* `2` (**1**0):
+* `3` (**1**1):
 ---
 
 ## 🔬 Deep Dive: Radix Sort in Base-2
